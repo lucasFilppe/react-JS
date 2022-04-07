@@ -7,10 +7,17 @@
     <title>Aprendendo javaScript</title>
 </head>
 <body>
-    <!--O comando document nos permite manipular essa pagina-->
-    <!--O comando window nos permite manipular outras paginas-->
-    <button onclick="window.location.href='https://github.com/lucasFilppe'"> Ir ao Programador</button>
+    <div id="area">
+        Bem vindo
+    </div>
+    
+    <br>
+    <br>
+
+    <!--Pega o elemento da id que passamos-->
+    <button onclick="document.getElementById('area').innerHTML = 'bem vindo ' + prompt('Qual é seu nome?'); ">entrar</button>
 
     <script src="index.js"></script>
+    
 </body>
 </html>

@@ -1,10 +1,13 @@
-var nome = ' ';
+function cadastroPessoa(info) {
+    let novosDados = {
+        ...info,
+        cargo: 'programador',
+        status: 1,
+        codigo: '123456'
+};
 
-//se localStorage estiver indefinido pedi o usuario para digitar seu nome
-if(typeof localStorage.nome == 'undefined') {
-    localStorage.nome = prompt("Digite seu nome?");
+return novosDados;
+
 }
 
-nome = localStorage.nome; //armazena localStorage na variavel nome
-
-document.getElementById('nome').innerHTML = nome;
+console.log(cadastroPessoa({nome: 'Lucas', sobrenome: 'Filipe', anoInicio: 2022}))

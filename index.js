@@ -1,12 +1,10 @@
-// se lucas estiver na lista mostra vedrdadeiro
-//includes
-let nomes = ['Lucas', 'Felipe', 'Pedro'];
-console.log(nomes.includes('Lucas'));
+//some
+let nomes = ['Mathus', 'Lucas', 'Felipe'];
+console.log(nomes.some(nome => nome === 'Lucas'));
 
-//verifica se string termina com o que passamos
-let nome1 = 'Lucas';
-console.log(nome1.endsWith('cas'));
-
-//verifica o começo
-console.log(nome1.startsWith('Lu'));
+//every
+let nomes1 = [
+                {nome: 'Mathus',idade: 18},
+                {nome: 'Lucas',idade: 15},];
+console.log(nomes1.every(nome => nome.idade >= 18));
 

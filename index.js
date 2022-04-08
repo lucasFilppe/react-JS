@@ -1,13 +1,6 @@
-function cadastroPessoa(info) {
-    let novosDados = {
-        ...info,
-        cargo: 'programador',
-        status: 1,
-        codigo: '123456'
-};
-
-return novosDados;
-
+function minhaLista(...nomes) {
+    console.log(nomes);
+    
 }
 
-console.log(cadastroPessoa({nome: 'Lucas', sobrenome: 'Filipe', anoInicio: 2022}))
+minhaLista("Lucas", 'Joao')

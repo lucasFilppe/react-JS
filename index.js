@@ -1,22 +1,17 @@
-function entrar(){
+//while = enquanto
 
-    var area = document.getElementById('area'); // pega o elemento id
-    var nome = prompt('Digite seu nome? '); // armazena 
+var x = 0;
 
-    if (nome == '' || nome == null) {
-        alert('Digite seu nome novamente');
-        area.innerHTML = 'bem vindo.... ';
-    }
-    else {
-        area.innerHTML = ' bem vindo ' + nome;
-    }
+while (x < 10) {
+    document.write('</br> O valor de x eh =' + x);
+    x++;
 }
 
+document.write('</br>');
 
-function entrar2(nome){
-
-    var area = document.getElementById('area2'); // pega o elemento id
-    var texto = prompt('Digite seu sobrenome? '); // armazena 
-
-    area.innerHTML = nome + " " + texto;
+//for = para
+var i;
+for (i = 10; i >= 0; i--) {
+    document.write('</br> O valor de x eh =' + i);
+    
 }

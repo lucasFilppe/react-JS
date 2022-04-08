@@ -1,10 +1,10 @@
-function acao(){
-    document.write("Executando.... </br>");
+var nome = ' ';
+
+//se localStorage estiver indefinido pedi o usuario para digitar seu nome
+if(typeof localStorage.nome == 'undefined') {
+    localStorage.nome = prompt("Digite seu nome?");
 }
 
-acao()
+nome = localStorage.nome; //armazena localStorage na variavel nome
 
-//executa de tempo em tempo
-var timer = setInterval(acao, 1000);
-
-//setTimeout(acao, 3000);
+document.getElementById('nome').innerHTML = nome;

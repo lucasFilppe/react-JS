@@ -1,18 +1,12 @@
-const lista = [1,2, 3,4, 5, 6];
+//função anônima
 
-//cria uma função que usa o conteúdo do array
-const novaLista = lista.map(function(item) {
-    return item * 5;
-})
+function adicionar(...numeros) {
+    let total = numeros.reduce((total, proximo) => {
+            let soma = total + proximo;
+            return soma;
+    });
+    console.log(total);
+    
+}
 
-console.log(novaLista);
-
-const soma = lista.reduce(function(total, proximo){
-    return total + proximo;
-})
-console.log(soma);
-
-const find = lista.find(function(item){
-    return item === 5;
-})
-console.log(find);
+adicionar(1, 2, 3, 4, 5);

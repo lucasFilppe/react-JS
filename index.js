@@ -1,12 +1,12 @@
-//função anônima
+// se lucas estiver na lista mostra vedrdadeiro
+//includes
+let nomes = ['Lucas', 'Felipe', 'Pedro'];
+console.log(nomes.includes('Lucas'));
 
-function adicionar(...numeros) {
-    let total = numeros.reduce((total, proximo) => {
-            let soma = total + proximo;
-            return soma;
-    });
-    console.log(total);
-    
-}
+//verifica se string termina com o que passamos
+let nome1 = 'Lucas';
+console.log(nome1.endsWith('cas'));
 
-adicionar(1, 2, 3, 4, 5);
+//verifica o começo
+console.log(nome1.startsWith('Lu'));
+

@@ -1,23 +1,39 @@
 import React from 'react';
 
-//criando componente e propriedades
-const BemVindo = (props) => {
+const Equipe = (props) => {
   return(
     <div>
-      <h2>Bem vindo(a) {props.nome} </h2>
-      <h2>Tenho (a) {props.idade} anos </h2>
+      <Sobre nome={props.nome} cargo={props.cargo} idade={props.idade}/> 
+      <Social fb={props.facebook}/>
+      <hr></hr>
     </div>
-  );
+  )
+}
+
+const Sobre = (props) => {
+  return(
+    <div>
+      <h1>Ola sou {props.nome}</h1>
+      <h2>Cargo: {props.cargo}</h2>
+      <h3>Idade: {props.idade}</h3>
+    </div>
+  )
+}
+
+const Social =(props) => {
+  return(
+    <div>
+      <a href={props.fb}>Facebook</a>
+    </div>
+  )
 }
 
 function App() {
   return (
-    <div >
-      <h1>Ola mundo</h1>
-        <BemVindo nome='Lucas' idade="23"/>
-        <BemVindo nome='Daniel' idade="27"/>
+    <div>
+      <Equipe nome="Lucas" cargo="Programador" idade="23" facebook="https://www.facebook.com/lucasfilipe.ramos.10"/>
+      <Equipe nome="Vinicius" cargo="analista de sistemas" idade="25" facebook="https://www.facebook.com/lucasfilipe.ramos.10"/>
     </div>
   );
 }
-
 export default App;

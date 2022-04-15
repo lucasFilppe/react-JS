@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-
+import Feed from './Feed';
 
 class App extends Component{
 
   constructor(props){
     super(props);
     this.state = {
-      status: true
+      feed:[
+        {id: 1, username:"Lucas", curtidads:10, comentarios:2},
+        {id: 2, username:"Vinicius", curtidas: 23, comentarios:5}
+      ]
     };
-    this.sair = this.sair.bind(this);
-    this.entrar = this.entrar.bind(this);
   }
 
   sair(){
@@ -24,18 +25,18 @@ class App extends Component{
     return(
       
         <div>
-        {this.state.status ?
-          <div>
-            <h1>Bem-vindo ao sitema</h1>
-            <button onClick={this.sair}>Sair</button>
-          </div>:
-
-          <div>
-            <h1>Olá visitante</h1>
-            <button onClick={this.entrar}>Entrar no sistema</button>
-          </div>
-
-        }
+          {this.state.feed.map((item) => {
+          return(
+            <div>
+              <Feed 
+                kry={item.id} 
+                username={item.username}
+                curtidads={item.curtidads}
+                comentarios={item.comentarios}
+              />
+            </div>
+          );
+        })}    
         </div>
       
       

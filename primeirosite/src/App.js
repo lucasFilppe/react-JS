@@ -1,47 +1,58 @@
 import React, { Component } from 'react';
-import Feed from './Feed';
 
-class App extends Component{
-
-  constructor(props){
+class App extends Component {
+  constructor(props) {
     super(props);
     this.state = {
-      feed:[
-        {id: 1, username:"Lucas", curtidads:10, comentarios:2},
-        {id: 2, username:"Vinicius", curtidas: 23, comentarios:5}
-      ]
+      email: '',
+      senha: '',
+      sexo: 'masculino'
     };
+
+    this.trocaEmail = this.trocaEmail.bind(this);
+    this.trocaSexo = this.trocaSexo.bind(this);
   }
 
-  sair(){
-    this.setState({status: false});
+  trocaEmail(event) {
+    let valorDigitado = event.target.value;
+    this.setState({email: valorDigitado});
   }
 
-  entrar(){
-      this.setState({status: true});
-    }
 
-    render(){
-    return(
-      
-        <div>
-          {this.state.feed.map((item) => {
-          return(
-            <div>
-              <Feed 
-                kry={item.id} 
-                username={item.username}
-                curtidads={item.curtidads}
-                comentarios={item.comentarios}
-              />
-            </div>
-          );
-        })}    
-        </div>
-      
-      
+  trocaSexo(event) {
+    let valorDigitado = event.target.value;
+    this.setState({sexo: valorDigitado});
+  }
+
+
+  render() {
+
+    return (
+      <div>
+        <h1>Login</h1>
+        Email:
+          <input
+          type="email"
+          name="email"
+          value={this.state.email}
+          onChange={this.trocaEmail}
+        />
+        <br></br>
+
+        Senha:
+        <input type="password" name="senaha" value={this.state.senha}
+            onChange={(event) => this.setState({senha: event.target.value})} />
+         <br></br>
+
+        Sexo:
+        <select name="sexo" value={this.state.sexo} onChange={this.trocaSexo}>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">feminino</option>
+        </select>
+      </div>
     );
   }
+  
 }
 
-export default App;
+  export default App;
